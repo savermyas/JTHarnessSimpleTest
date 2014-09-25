@@ -1,0 +1,8 @@
+# Test Suite properties file for DemoTCK test suite 
+# with tag-style tests
+name=My Test Suite
+id=1.0
+classpath=lib/javatest.jar
+finder=com.sun.javatest.finder.TagTestFinder
+script=com.sun.javatest.lib.StdTestScript
+interview=com.sun.javatest.interview.SimpleInterviewParameters

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.oracle</groupId>
+    <artifactId>SimpleTest</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    
+    <dependencies>
+        <dependency>
+            <groupId>com.sun</groupId>
+            <artifactId>javatest</artifactId>
+            <version>4.4.1</version>
+            <scope>compile</scope> 
+            <!--systemPath>${project.basedir}/lib/javatest.jar</systemPath-->
+        </dependency>
+    </dependencies>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+    
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.1</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <echo>Copying necessary files</echo>
+                                <copy file="${basedir}/resources/example.jti" tofile="${project.build.directory}/example.jti"/>
+                                <copy file="${basedir}/resources/testsuite.jtt" tofile="${project.build.directory}/testsuite.jtt"/>
+                                <copy todir="${project.build.directory}/tests/">
+                                    <fileset dir="${basedir}/src/main/java/">
+                                        <include name="**/*.java"/>  <!--copy sources to tests folder-->
+                                    </fileset>                                   
+                                </copy>
+                                <copy todir="${project.build.directory}/lib/">
+                                    <fileset dir="${basedir}/lib/">
+                                        <include name="**/*.jar"/>  <!--copy dependencies to lib-->
+                                    </fileset>                 
+                                    <mapper type="flatten"/>                  
+                                </copy>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>run</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                              
+                <configuration>
+                    <executable>java</executable>
+                    <workingDirectory>${project.build.directory}/</workingDirectory>
+                    <commandlineArgs>-jar lib/javatest.jar -ts . -wd -create workDir -config example.jti</commandlineArgs>
+                </configuration>
+            </plugin>
+            
+        </plugins>
+     
+    
+    
+     
+     
+    </build>
+    <name>JTHarnessSimpleTest</name>
+</project>
