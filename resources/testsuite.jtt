@@ -2,7 +2,7 @@
 # with tag-style tests
 name=My Test Suite
 id=1.0
-classpath=lib/javatest.jar
+classpath=lib/javatest.jar lib/j2mefw_jt.jar
 finder=com.sun.javatest.finder.TagTestFinder
 script=com.sun.javatest.lib.StdTestScript
 interview=com.sun.javatest.interview.SimpleInterviewParameters
