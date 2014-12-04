@@ -20,12 +20,12 @@ public class MySimpleTestInterview extends Interview {
 	}
 	
 	private void init() throws Fault {
-        setResourceBundle("i18n");
-        //setHelpSet("help/TemplateTestInterview");
-        setHelpSet(MySimpleTestInterview.class.getResource("help/MySimpleTestInterview").toString());
-        System.out.println(getHelpSet());
-        first.setExporter(
-                Exporters.getStringValueExporter("exampleProperty.value"));
+        //setResourceBundle("i18n");
+        //setHelpSet("help/MySimpleTestInterview");
+        //System.out.println(MySimpleTestInterview.class.getResource("help/MySimpleTestInterview").toString());
+        //setHelpSet(MySimpleTestInterview.class.getResource("help/MySimpleTestInterview").toString());
+        //System.out.println(getHelpSet());
+        //first.setExporter(Exporters.getStringValueExporter("exampleProperty.value"));
         setFirstQuestion(first);
         first.linkTo(end);
     }

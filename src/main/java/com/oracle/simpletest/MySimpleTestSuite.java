@@ -24,8 +24,8 @@ public class MySimpleTestSuite extends J2meBaseTestSuite {
 	    		
 	    		result = BasicTckInterview.createBuilder(this)
 //	    		.setImpAware(false)
-//	                .setSubInterview("com.oracle.simpletest.MySimpleTestInterview")
-//	                .setDistributed(true)
+	                .setSubInterview("com.oracle.simpletest.MySimpleTestInterview")
+	                .setDistributed(true)
 //	                .setBundleSizeLimit(100000)
 //	                .setKeywordsEnabled(true)
 //	                .setEnableSeparatorQuestion(true)

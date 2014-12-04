@@ -72,11 +72,16 @@
 						<configuration>
 							<tasks>
 								<echo>Copying necessary files</echo>
-								<copy file="${basedir}/resources/example.jti" tofile="${project.build.directory}/example.jti" />
-								<copy file="${basedir}/resources/testsuite.jtt" tofile="${project.build.directory}/testsuite.jtt" />
+								<copy file="${basedir}/src/main/resources/example.jti" tofile="${project.build.directory}/example.jti" />
+								<copy file="${basedir}/src/main/resources/testsuite.jtt" tofile="${project.build.directory}/testsuite.jtt" />
 								<copy todir="${project.build.directory}/tests/">
 									<fileset dir="${basedir}/src/main/java/">
 										<include name="**/*.java" />
+									</fileset>
+								</copy>
+								<copy todir="${project.build.directory}">
+									<fileset dir="${basedir}/src/main/resources/">
+										<include name="**/*.*" />
 									</fileset>
 								</copy>
 								<!-- <copy todir="${project.build.directory}/lib/"> <fileset dir="${basedir}/lib/"> 
@@ -106,8 +111,7 @@
 					<workingDirectory>${project.build.directory}/</workingDirectory>
 					<arguments>
 						<argument>-classpath</argument>
-						<!-- automatically creates the classpath using all project dependencies, 
-							also adding the project build directory -->
+						<!-- automatically creates the classpath using all project dependencies, also adding the project build directory -->
 						<classpath />
 						<argument>com.oracle.simpletest.MyJavaTest</argument>
 						<argument>-ts</argument>
@@ -127,7 +131,7 @@
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
 					<execution>
-						<phase>install</phase>
+						<phase>package</phase>
 						<goals>
 							<goal>copy-dependencies</goal>
 						</goals>
@@ -137,6 +141,23 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        
+        <configuration>
+          <archive>
+            <manifest>
+               <addClasspath>true</addClasspath>
+               <classpathPrefix>lib/</classpathPrefix>              
+               <mainClass>com.oracle.simpletest.MyJavaTest</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+        
+      </plugin>
+			
 
 		</plugins>
 
