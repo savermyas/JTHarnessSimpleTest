@@ -9,4 +9,4 @@ You should have Maven installed in your system.
 2. mvn prepare-package; 
 3. mvn exec:exec; 
  
-Rezult will be placed in target folder
+Then configure your test parameters and run it.

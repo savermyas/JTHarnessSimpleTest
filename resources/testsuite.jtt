@@ -5,4 +5,4 @@ id=1.5
 classpath=lib/javatest-4.4.1.jar lib/j2mefw.javatest-1.2.2.jar
 finder=com.sun.javatest.finder.TagTestFinder
 script=com.sun.javatest.lib.StdTestScript
-interview=com.sun.javatest.interview.SimpleInterviewParameters
+interview=com.oracle.simpletest.MySimpleTestInterview
