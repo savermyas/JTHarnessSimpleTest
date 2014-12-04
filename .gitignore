@@ -16,3 +16,7 @@ hs_err_pid*
 .settings*
 .classpath
 .project
+
+# Project specific stuff
+downloads
+
