@@ -2,7 +2,8 @@
 # with tag-style tests
 name=My Test Suite
 id=1.5
-classpath=lib/javatest-4.4.1.jar lib/j2mefw.javatest-1.2.2.jar
+classpath=lib/javatest-4.4.1.jar lib/j2mefw.javatest-1.2.2.jar lib/j2me.interview-1.2.2.jar
 finder=com.sun.javatest.finder.TagTestFinder
 script=com.sun.javatest.lib.StdTestScript
-interview=com.oracle.simpletest.MySimpleTestInterview
+#interview=com.oracle.simpletest.MySimpleTestInterview
+testsuite=com.oracle.simpletest.MySimpleTestSuite

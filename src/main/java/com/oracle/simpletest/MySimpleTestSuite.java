@@ -21,14 +21,15 @@ public class MySimpleTestSuite extends J2meBaseTestSuite {
 	    	String mode = getTestSuiteInfo("interview.mode");
 	    	InterviewParameters result = null;
 	    	try {
+	    		
 	    		result = BasicTckInterview.createBuilder(this)
 //	    		.setImpAware(false)
-	                .setSubInterview("sqe.suite.TemplateTestInterview")
-	                .setDistributed(true)
-	                .setBundleSizeLimit(100000)
-	                .setKeywordsEnabled(true)
-	                .setEnableSeparatorQuestion(true)
-	                .setImplemetationBaseChoices(new String[] {VmInterview.MIDP})
+//	                .setSubInterview("com.oracle.simpletest.MySimpleTestInterview")
+//	                .setDistributed(true)
+//	                .setBundleSizeLimit(100000)
+//	                .setKeywordsEnabled(true)
+//	                .setEnableSeparatorQuestion(true)
+//	                .setImplemetationBaseChoices(new String[] {VmInterview.MIDP})
 	                .build();
 	        } catch (com.sun.interview.Interview.Fault fault) {
 	            fault.printStackTrace();

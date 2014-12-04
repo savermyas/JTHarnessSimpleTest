@@ -2,13 +2,12 @@ package com.oracle.simpletest;
 
 import com.sun.interview.FinalQuestion;
 import com.sun.interview.Interview;
-import com.sun.tck.j2me.interview.MidpTckBaseInterview;
 import com.sun.tck.j2me.interview.lib.Exporters;
 import com.sun.tck.j2me.interview.lib.StringQuestion;
 
 public class MySimpleTestInterview extends Interview {
 
-	protected MySimpleTestInterview(MidpTckBaseInterview parent, String baseTag) throws Fault {
+	protected MySimpleTestInterview(Interview parent, String baseTag) throws Fault {
 		super(parent, baseTag);
 		// TODO Auto-generated constructor stub
 		init();
@@ -24,6 +23,7 @@ public class MySimpleTestInterview extends Interview {
         setResourceBundle("i18n");
         //setHelpSet("help/TemplateTestInterview");
         setHelpSet(MySimpleTestInterview.class.getResource("help/MySimpleTestInterview").toString());
+        System.out.println(getHelpSet());
         first.setExporter(
                 Exporters.getStringValueExporter("exampleProperty.value"));
         setFirstQuestion(first);
