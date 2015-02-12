@@ -1,4 +1,4 @@
-package com.oracle.simpletest;
+package com.github.mesimpletest.tests;
 
 import com.sun.javatest.tool.Main;
 

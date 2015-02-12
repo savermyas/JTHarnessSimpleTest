@@ -1,27 +1,21 @@
-package com.oracle.simpletest;
+package com.github.mesimpletest.testsuite;
 
 import com.sun.interview.FinalQuestion;
 import com.sun.interview.Interview;
-import com.sun.tck.j2me.interview.lib.Exporters;
+import com.sun.tck.j2me.interview.MidpTckBaseInterview;
 import com.sun.tck.j2me.interview.lib.StringQuestion;
 
 public class MySimpleTestInterview extends Interview {
 
-	protected MySimpleTestInterview(Interview parent, String baseTag) throws Fault {
-		super(parent, baseTag);
-		// TODO Auto-generated constructor stub
-		init();
-	}
-	
-	protected MySimpleTestInterview(String baseTag) throws Fault {
-		super(baseTag);
-		// TODO Auto-generated constructor stub
-		init();
-	}
+	public MySimpleTestInterview(MidpTckBaseInterview parent)
+            throws Fault {
+        super(parent, "ams");
+        init();
+    }
 	
 	private void init() throws Fault {
-        //setResourceBundle("i18n");
-        //setHelpSet("help/MySimpleTestInterview");
+        setResourceBundle("i18n");
+        setHelpSet("help/MySimpleTestInterview");
         //System.out.println(MySimpleTestInterview.class.getResource("help/MySimpleTestInterview").toString());
         //setHelpSet(MySimpleTestInterview.class.getResource("help/MySimpleTestInterview").toString());
         //System.out.println(getHelpSet());
