@@ -1,0 +1,28 @@
+#JT Harness Configuration Interview
+#Thu Sep 25 04:21:22 MSK 2014
+DESCRIPTION=ok
+INTERVIEW=com.sun.javatest.interview.SimpleInterviewParameters
+LOCALE=ru_RU
+NAME=yeah
+QUESTION=simple.classPath
+#TESTSUITE=/home/saver/orcl/NetBeansProjects/SimpleTest
+#WORKDIR=/home/saver/orcl/NetBeansProjects/SimpleTest/wd
+simple.classPath=./classes\n./lib/javatest.jar
+simple.cmdType=otherVM
+simple.concurrency.concurrency=1
+simple.desc=ok
+simple.excludeList.latestAutoCheck=No
+simple.excludeList.latestAutoCheckInterval=7
+simple.excludeList.latestAutoCheckMode=everyXDays
+simple.excludeList.needExcludeList=No
+simple.jvm=java
+simple.keywords.keywords.mode=expr
+simple.keywords.needKeywords=No
+simple.knownFailuresList.needKfl=No
+simple.name=yeah
+simple.priorStatus.needStatus=No
+simple.priorStatus.status=
+simple.tests.needTests=Yes
+simple.tests.tests=
+simple.tests.treeOrFile=tree
+simple.timeout.timeout=1

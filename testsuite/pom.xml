@@ -6,7 +6,7 @@
 	<artifactId>mesimpletest.testsuite</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>JTHarnessSimpleTest</name>
+	<name>TestSuite</name>
 	
 	<parent>
         <groupId>com.github</groupId>
