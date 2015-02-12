@@ -1,4 +1,4 @@
-package com.github.mesimpletest.tests;
+package com.github.mesimpletest.testsuite;
 
 import com.sun.javatest.tool.Main;
 
